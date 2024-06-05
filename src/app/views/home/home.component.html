@@ -35,7 +35,7 @@
         <td class="px-6 py-4">${{ item.price }}</td>
         <td class="flex items-center px-6 py-4">
           <a
-            (click)="actions.editItem(item)"
+            (click)="actions.openPanel('update', item)"
             class="font-medium text-blue-500 hover:underline cursor-pointer"
             >Edit</a
           >

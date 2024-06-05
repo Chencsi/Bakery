@@ -8,6 +8,7 @@ import { Item } from './types';
 })
 export class ActionsService {
   public db: DbService;
+  public option: ('create' | 'update');
   public error: any;
   public editId: string;
   public blur: boolean = false;
@@ -22,19 +23,9 @@ export class ActionsService {
     this.db = inject(DbService);
   }
 
-  editItem(item: Item): void {
-    this.editId = item.id;
-    this.itemForm.patchValue({
-      name: item.name,
-      description: item.description,
-      category: item.category,
-      price: item.price.toString(),
-    });
-    this.blur = true;
-  }
-
   openPanel(option: 'create' | 'update', item?: Item): void {
     this.blur = true;
+    this.option = option;
     switch (option) {
       case 'create':
         break;
@@ -50,6 +41,10 @@ export class ActionsService {
         }
         break;
     }
+  }
+
+  createItem(): void {
+    
   }
 
   removeItem(item: Item): void {

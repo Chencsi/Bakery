@@ -19,6 +19,7 @@ export class HomeComponent {
     category: new FormControl(""),
     price: new FormControl("")
   })
+  public error: any;
   public editId: string;
   public blur: boolean = false;
   public db: DbService;
@@ -44,7 +45,24 @@ export class HomeComponent {
   }
   
   updateItem(): void {
-    this.blur = false;
-    this.db.updateItem(this.editId, this.itemForm.value)
+    const price: any = this.itemForm.value['price'];
+    let parsed: number;
+    try {
+      parsed = Number(price)
+      if (parsed > 0) {
+        this.blur = false;
+        this.db.updateItem(this.editId, this.itemForm.value)
+      }
+    } catch {
+      this.error = "Price can only be a number!"
+    }
+  }
+
+  onKeyPress(event: any) {
+    const regexpNumber = /[0-9\+\-\ ]/;
+    let inputCharacter = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !regexpNumber.test(inputCharacter)) {
+      event.preventDefault();
+    }
   }
 }

@@ -2,17 +2,23 @@ import { Component, inject } from '@angular/core';
 import { DbService } from '../../../db.service';
 import { Item } from '../../../types';
 import { CommonModule } from '@angular/common';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  public editingItem: Item;
+  public itemForm = new FormGroup({
+    name: new FormControl(""),
+    description: new FormControl(""),
+    category: new FormControl(""),
+    price: new FormControl("")
+  })
   public blur: boolean = false;
   public db: DbService;
   
@@ -21,7 +27,12 @@ export class HomeComponent {
   }
   
   editItem(item: Item): void {
-    this.editingItem = item;
+    this.itemForm.patchValue({
+      name: item.name,
+      description: item.description,
+      category: item.category,
+      price: item.price.toString()
+    })
     this.blur = true;
   }
   
@@ -32,6 +43,6 @@ export class HomeComponent {
   
   saveItem(): void {
     this.blur = false;
-    console.log(this.editingItem)
+    console.log(this.itemForm.value)
   }
 }

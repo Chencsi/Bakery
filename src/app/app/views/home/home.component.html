@@ -4,7 +4,7 @@
   <div
     class="p-5 relative bg-white text-zinc-800 w-1/3 h-2/3 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 rounded-lg shadow-xl"
   >
-    <form action="" class="flex flex-col gap-5 px-5">
+    <form action="" class="flex flex-col gap-5 px-5" [formGroup]="itemForm">
       <h1 class="uppercase font-bold w-full text-center text-2xl text-white bg-zinc-800 rounded-lg py-2">Edit</h1>
       <div class="flex flex-col gap-2">
         <label for="name">Name</label>
@@ -12,7 +12,8 @@
           type="text"
           name="name"
           id="name"
-          class="border-zinc-800 border-2 rounded-lg shadow-md p-2" [value]="editingItem.name"
+          class="border-zinc-800 border-2 rounded-lg shadow-md p-2"
+          formControlName="name"
         />
       </div>
       <div class="flex flex-col gap-2">
@@ -21,7 +22,8 @@
           type="text"
           name="name"
           id="name"
-          class="border-zinc-800 border-2 rounded-lg shadow-md p-2" [value]="editingItem.description"
+          class="border-zinc-800 border-2 rounded-lg shadow-md p-2"
+          formControlName="description"
         />
       </div>
       <div class="flex flex-col gap-2">
@@ -30,7 +32,8 @@
           type="text"
           name="category"
           id="category"
-          class="border-zinc-800 border-2 rounded-lg shadow-md p-2" [value]="editingItem.category"
+          class="border-zinc-800 border-2 rounded-lg shadow-md p-2"
+          formControlName="category"
         />
       </div>
       <div class="flex flex-col gap-2">
@@ -39,7 +42,8 @@
           type="text"
           name="price"
           id="price"
-          class="border-zinc-800 border-2 rounded-lg shadow-md p-2" [value]="editingItem.price"
+          class="border-zinc-800 border-2 rounded-lg shadow-md p-2"
+          formControlName="price"
         />
       </div>
       <button type="button" class="uppercase font-bold text-2xl text-white bg-zinc-800 mt-1 py-2 rounded-lg hover:" (click)="saveItem()">Save</button>

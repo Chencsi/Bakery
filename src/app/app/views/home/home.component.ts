@@ -1,16 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { DbService } from '../../../db.service';
 import { Item } from '../../../types';
-import { ButtonModule } from 'primeng/button';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  public visible: boolean = false;
   public db: DbService;
   
   constructor() {

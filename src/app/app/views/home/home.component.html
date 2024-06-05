@@ -1,4 +1,9 @@
-<div class="overflow-x-auto shadow-md">
+<!-- panel -->
+<div class="absolute left-0 top-0 z-10 w-screen h-screen blur-lg">
+
+</div>
+
+<div class="overflow-x-auto shadow-md" [ngClass]="visible ? 'blur' : ''">
     <table class="w-full text-sm text-left text-zinc-900">
         <thead class="text-xs uppercase bg-zinc-300">
             <tr>
@@ -42,7 +47,6 @@
                     </td>
                     <td class="flex items-center px-6 py-4">
                         <a (click)="editItem(item)" class="font-medium text-blue-500 hover:underline cursor-pointer">Edit</a>
-                        <p-button label="Submit" />
                         <a (click)="removeItem(item)" class="font-medium text-red-500 hover:underline ms-3 cursor-pointer">Remove</a>
                     </td>
                 </tr>

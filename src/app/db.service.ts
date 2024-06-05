@@ -14,6 +14,7 @@ export class DbService {
   public onItemsLoaded: Subject<boolean> = new Subject<boolean>;
   public onItemsChanged: Subject<boolean> = new Subject<boolean>;
   public onItemAdded: Subject<boolean> = new Subject<boolean>;
+  public nextId: string;
 
   constructor(private http: HttpClient) {
     this.fetchItems();
@@ -39,7 +40,7 @@ export class DbService {
     return this.items;
   }
 
-  async addItem(item: Item): Promise<void> {
+  async addItem(item: { [key: string]: any }): Promise<void> {
     await new Promise((resolve, reject) => {
       this.http.post(this.url, item).subscribe((response) => {
         this.items.push(response as Item);

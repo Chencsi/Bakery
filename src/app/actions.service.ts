@@ -44,7 +44,7 @@ export class ActionsService {
   }
 
   createItem(): void {
-    
+    this.db.addItem(this.itemForm.value)
   }
 
   removeItem(item: Item): void {

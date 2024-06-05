@@ -2,12 +2,11 @@ import { Component, inject } from '@angular/core';
 import { DbService } from '../../db.service';
 import { CommonModule } from '@angular/common';
 import { ActionsService } from '../../actions.service';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

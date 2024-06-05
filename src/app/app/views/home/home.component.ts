@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { DbService } from '../../../db.service';
 import { Item } from '../../../types';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [ButtonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

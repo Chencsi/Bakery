@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { DbService } from '../../../db.service';
+import { DbService } from '../../db.service';
 import { CommonModule } from '@angular/common';
-import { ActionsService } from '../../../actions.service';
+import { ActionsService } from '../../actions.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({

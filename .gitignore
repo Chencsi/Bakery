@@ -43,3 +43,4 @@ testem.log
 Thumbs.db
 
 /src/copy.json
+/src/db.json

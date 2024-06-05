@@ -7,7 +7,7 @@ import { Item } from './types';
   providedIn: 'root'
 })
 export class DbService {
-  private url: string = "http://127.0.0.1:3000/bakery";
+  private url: string = "http://127.0.0.1:3000/bakery/";
   public items: Item[];
   public categories: string[];
   public error: string;
@@ -49,7 +49,7 @@ export class DbService {
     });
   }
 
-  async removeItem(id: number): Promise<void> {
+  async removeItem(id: string): Promise<void> {
     await new Promise((resolve, reject) => {
       this.http.delete(this.url + id).subscribe((response) => {
         let newItems: Item[] = [];

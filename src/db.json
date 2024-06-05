@@ -1,74 +1,74 @@
 {
-    "bakery": [
-        {
-            "id": 1,
-            "name": "Sourdough Bread",
-            "description": "A classic sourdough loaf with a crispy crust and chewy interior.",
-            "price": 4.99,
-            "category": "bread"
-        },
-        {
-            "id": 2,
-            "name": "Chocolate Chip Cookies",
-            "description": "Freshly baked cookies loaded with chocolate chips.",
-            "price": 2.99,
-            "category": "cookies"
-        },
-        {
-            "id": 3,
-            "name": "Blueberry Muffin",
-            "description": "A moist muffin bursting with fresh blueberries.",
-            "price": 3.49,
-            "category": "muffins"
-        },
-        {
-            "id": 4,
-            "name": "Croissant",
-            "description": "A buttery, flaky croissant perfect for breakfast.",
-            "price": 2.99,
-            "category": "pastries"
-        },
-        {
-            "id": 5,
-            "name": "Lemon Tart",
-            "description": "A tangy and sweet lemon tart with a shortcrust pastry base.",
-            "price": 4.50,
-            "category": "tarts"
-        },
-        {
-            "id": 6,
-            "name": "Red Velvet Cake",
-            "description": "A rich red velvet cake topped with creamy frosting.",
-            "price": 6.99,
-            "category": "cakes"
-        },
-        {
-            "id": 7,
-            "name": "Bagels",
-            "description": "Freshly baked bagels with a variety of toppings.",
-            "price": 1.99,
-            "category": "bread"
-        },
-        {
-            "id": 8,
-            "name": "Cinnamon Rolls",
-            "description": "Soft and gooey cinnamon rolls with a sweet glaze.",
-            "price": 3.99,
-            "category": "pastries"
-        },
-        {
-            "id": 9,
-            "name": "Brownies",
-            "description": "Rich and fudgy brownies with a gooey center.",
-            "price": 3.49,
-            "category": "cakes"
-        },
-        {
-            "id": 10,
-            "name": "Fruit Tart",
-            "description": "A delightful tart topped with fresh seasonal fruits.",
-            "price": 5.50,
-            "category": "tarts"
-        }
-    ]
+  "bakery": [
+    {
+        "id": "1",
+        "name": "Sourdough Bread",
+        "description": "A classic sourdough loaf with a crispy crust and chewy interior.",
+        "price": 4.99,
+        "category": "bread"
+    },
+    {
+        "id": "2",
+        "name": "Chocolate Chip Cookies",
+        "description": "Freshly baked cookies loaded with chocolate chips.",
+        "price": 2.99,
+        "category": "cookies"
+    },
+    {
+        "id": "3",
+        "name": "Blueberry Muffin",
+        "description": "A moist muffin bursting with fresh blueberries.",
+        "price": 3.49,
+        "category": "muffins"
+    },
+    {
+        "id": "4",
+        "name": "Croissant",
+        "description": "A buttery, flaky croissant perfect for breakfast.",
+        "price": 2.99,
+        "category": "pastries"
+    },
+    {
+        "id": "5",
+        "name": "Lemon Tart",
+        "description": "A tangy and sweet lemon tart with a shortcrust pastry base.",
+        "price": 4.50,
+        "category": "tarts"
+    },
+    {
+        "id": "6",
+        "name": "Red Velvet Cake",
+        "description": "A rich red velvet cake topped with creamy frosting.",
+        "price": 6.99,
+        "category": "cakes"
+    },
+    {
+        "id": "7",
+        "name": "Bagels",
+        "description": "Freshly baked bagels with a variety of toppings.",
+        "price": 1.99,
+        "category": "bread"
+    },
+    {
+        "id": "8",
+        "name": "Cinnamon Rolls",
+        "description": "Soft and gooey cinnamon rolls with a sweet glaze.",
+        "price": 3.99,
+        "category": "pastries"
+    },
+    {
+        "id": "9",
+        "name": "Brownies",
+        "description": "Rich and fudgy brownies with a gooey center.",
+        "price": 3.49,
+        "category": "cakes"
+    },
+    {
+        "id": "10",
+        "name": "Fruit Tart",
+        "description": "A delightful tart topped with fresh seasonal fruits.",
+        "price": 5.50,
+        "category": "tarts"
+    }
+]
 }

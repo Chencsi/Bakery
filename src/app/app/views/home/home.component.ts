@@ -17,11 +17,11 @@ export class HomeComponent {
   }
 
   editItem(item: Item): void {
-    const id: number = item.id;
+    const id: string = item.id;
     document.querySelector('#panel')?.classList.add('blur-lg');
   }
   removeItem(item: Item): void {
-    const id: number = item.id;
+    const id: string = item.id;
     this.db.removeItem(id);
   }
 }

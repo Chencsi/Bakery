@@ -12,19 +12,26 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  public visible: boolean = false;
+  public editingItem: Item;
+  public blur: boolean = false;
   public db: DbService;
   
   constructor() {
     this.db = inject(DbService);
   }
-
+  
   editItem(item: Item): void {
-    const id: string = item.id;
-    document.querySelector('#panel')?.classList.add('blur-lg');
+    this.editingItem = item;
+    this.blur = true;
   }
+  
   removeItem(item: Item): void {
     const id: string = item.id;
     this.db.removeItem(id);
+  }
+  
+  saveItem(): void {
+    this.blur = false;
+    console.log(this.editingItem)
   }
 }

@@ -1,0 +1,51 @@
+<div class="overflow-x-auto shadow-md">
+    <table class="w-full text-sm text-left text-zinc-900">
+        <thead class="text-xs uppercase bg-zinc-300">
+            <tr>
+                <th scope="col" class="px-6 py-3 drop-shadow-lg">
+                    ID
+                </th>
+                <th scope="col" class="px-6 py-3 drop-shadow-lg">
+                    Name
+                </th>
+                <th scope="col" class="px-6 py-3 drop-shadow-lg">
+                    Description
+                </th>
+                <th scope="col" class="px-6 py-3 drop-shadow-lg">
+                    Category
+                </th>
+                <th scope="col" class="px-6 py-3 drop-shadow-lg">
+                    Price
+                </th>
+                <th scope="col" class="px-6 py-3 drop-shadow-lg">
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody class="bg-zinc-100">
+            @for (item of db.items; track $index) {
+                <tr class="border-b border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-zinc-900 whitespace-nowrap">
+                        {{ item.id }}
+                    </th>
+                    <td class="px-6 py-4">
+                        {{ item.name }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ item.description }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ item.category }}
+                    </td>
+                    <td class="px-6 py-4">
+                        ${{ item.price }}
+                    </td>
+                    <td class="flex items-center px-6 py-4">
+                        <a (click)="editItem(item)" class="font-medium text-blue-500 hover:underline">Edit</a>
+                        <a (click)="removeItem(item)" class="font-medium text-red-500 hover:underline ms-3">Remove</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

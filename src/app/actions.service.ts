@@ -8,7 +8,7 @@ import { Item } from './types';
 })
 export class ActionsService {
   public db: DbService;
-  public option: ('create' | 'update');
+  public option: 'create' | 'update';
   public error: any;
   public editId: string;
   public blur: boolean = false;
@@ -22,29 +22,24 @@ export class ActionsService {
   constructor() {
     this.db = inject(DbService);
   }
-
   openPanel(option: 'create' | 'update', item?: Item): void {
     this.blur = true;
     this.option = option;
-    switch (option) {
-      case 'create':
-        break;
-      case 'update':
-        if (item) {
-          this.editId = item.id;
-          this.itemForm.patchValue({
-            name: item.name,
-            description: item.description,
-            category: item.category,
-            price: item.price.toString(),
-          });
-        }
-        break;
+    if (option === 'update') {
+      if (item) {
+        this.editId = item.id;
+        this.itemForm.patchValue({
+          name: item.name,
+          description: item.description,
+          category: item.category,
+          price: item.price.toString(),
+        });
+      }
     }
   }
 
   createItem(): void {
-    this.db.addItem(this.itemForm.value)
+    this.db.addItem(this.itemForm.value);
   }
 
   removeItem(item: Item): void {

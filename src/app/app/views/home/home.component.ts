@@ -58,6 +58,10 @@ export class HomeComponent {
     }
   }
 
+  closePanel(): void {
+    this.blur = false;
+  }
+
   onKeyPress(event: any) {
     const regexpNumber = /[0-9\+\-\ ]/;
     let inputCharacter = String.fromCharCode(event.charCode);

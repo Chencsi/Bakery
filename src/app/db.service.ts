@@ -64,4 +64,26 @@ export class DbService {
       });
     });
   }
+
+  async updateItem(id: string, updatedData: { [key: string]: any }): Promise<void> {
+    const updatedItem: Item = {
+      id: id,
+      name: updatedData["name"],
+      description: updatedData["description"],
+      category: updatedData["category"],
+      price: updatedData["price"]
+    }
+    await new Promise((resolve, reject) => {
+      this.http.put(this.url + id, updatedItem).subscribe((response) => {
+        this.items = this.items.map((item) => {
+          if (item.id === id) {
+            return { ...item, ...updatedItem };
+          }
+          return item;
+        });
+        this.onItemsChanged.next(true);
+        resolve(null);
+      });
+    });
+  }
 }

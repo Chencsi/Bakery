@@ -19,6 +19,7 @@ export class HomeComponent {
     category: new FormControl(""),
     price: new FormControl("")
   })
+  public editId: string;
   public blur: boolean = false;
   public db: DbService;
   
@@ -27,6 +28,7 @@ export class HomeComponent {
   }
   
   editItem(item: Item): void {
+    this.editId = item.id;
     this.itemForm.patchValue({
       name: item.name,
       description: item.description,
@@ -41,8 +43,8 @@ export class HomeComponent {
     this.db.removeItem(id);
   }
   
-  saveItem(): void {
+  updateItem(): void {
     this.blur = false;
-    console.log(this.itemForm.value)
+    this.db.updateItem(this.editId, this.itemForm.value)
   }
 }

@@ -25,16 +25,27 @@ export class ActionsService {
   openPanel(option: 'create' | 'update', item?: Item): void {
     this.blur = true;
     this.option = option;
-    if (option === 'update') {
-      if (item) {
-        this.editId = item.id;
+
+    switch (option) {
+      case 'update':
+        if (item) {
+          this.editId = item.id;
+          this.itemForm.patchValue({
+            name: item.name,
+            description: item.description,
+            category: item.category,
+            price: item.price.toString(),
+          });
+        }
+        break;
+      case 'create':
         this.itemForm.patchValue({
-          name: item.name,
-          description: item.description,
-          category: item.category,
-          price: item.price.toString(),
+          name: '',
+          description: '',
+          category: '',
+          price: '',
         });
-      }
+        break;
     }
   }
 

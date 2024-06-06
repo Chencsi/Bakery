@@ -51,6 +51,7 @@ export class ActionsService {
 
   createItem(): void {
     this.db.addItem(this.itemForm.value);
+    this.closePanel();
   }
 
   removeItem(item: Item): void {
